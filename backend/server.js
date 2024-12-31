@@ -1,3 +1,4 @@
+// backend/app.js
 const express = require('express');
 const cors = require('cors');
 require('./config/dotenvConfig'); // Load environment variables
@@ -19,6 +20,12 @@ app.use('/api/auth', authRouter);
 // Default route
 app.get('/', (req, res) => {
     res.send('Welcome to the Google Books API Backend with Authentication!');
+});
+
+// Error handling middleware (optional)
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
 });
 
 // Start server

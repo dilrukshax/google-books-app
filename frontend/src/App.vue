@@ -1,35 +1,24 @@
+<!-- frontend/src/App.vue -->
 <template>
-  <div id="app" style="padding: 20px;">
-    <h1>Google Books Search</h1>
-    <SearchBar @search="fetchBooks" />
-    <BookList :books="books" />
+  <div class="min-h-screen bg-gray-100">
+    <AppNavbar />
+    <div class="container mx-auto p-4">
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-import SearchBar from './components/SearchBar.vue';
-import BookList from './components/BookList.vue';
+import AppNavbar from './components/AppNavbar.vue';
 
 export default {
+  name: 'App',
   components: {
-    SearchBar,
-    BookList,
-  },
-  data() {
-    return {
-      books: [],
-    };
-  },
-  methods: {
-    async fetchBooks(query) {
-      try {
-        const response = await axios.get(`http://localhost:5000/api/books/search?q=${query}`);
-        this.books = response.data.books;
-      } catch (error) {
-        console.error('Error fetching books:', error);
-      }
-    },
+    AppNavbar,
   },
 };
 </script>
+
+<style>
+/* Global styles can go here */
+</style>
