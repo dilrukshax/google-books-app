@@ -6,6 +6,7 @@ const mongoose = require('./db/database'); // MongoDB connection
 
 const booksRouter = require('./routes/books');
 const authRouter = require('./routes/auth');
+const favoritesRoutes = require('./routes/favorites');
 
 const app = express();
 
@@ -16,6 +17,8 @@ app.use(express.json());
 // Routes
 app.use('/api/books', booksRouter);
 app.use('/api/auth', authRouter);
+app.use('/api/favorites', favoritesRoutes); 
+
 
 // Default route
 app.get('/', (req, res) => {
