@@ -13,33 +13,42 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-800 text-white">
+    <nav className="bg-gray-800 text-white shadow-md">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <Link to="/" className="text-xl font-bold">
+        {/* App Title */}
+        <Link to="/" className="text-2xl font-bold hover:text-gray-300">
           Google Books App
         </Link>
-        <div>
+
+        {/* Navigation Links */}
+        <div className="flex items-center space-x-4">
           {auth.isAuthenticated ? (
             <>
-              <Link to="/" className="mr-4 hover:text-gray-300">
-                Home
-              </Link>
-              <Link to="/categories" className="mr-4 hover:text-gray-300">
-                Categories
-              </Link>
-              <Link to="/favorites" className="mr-4 hover:text-gray-300">
+              <Link
+                to="/favorites"
+                className="hover:text-gray-300 transition-colors duration-200"
+              >
                 Favorites
               </Link>
-              <button onClick={onLogout} className="hover:text-gray-300">
+              <button
+                onClick={onLogout}
+                className="hover:text-gray-300 transition-colors duration-200"
+              >
                 Logout
               </button>
             </>
           ) : (
             <>
-              <Link to="/login" className="mr-4 hover:text-gray-300">
+              <Link
+                to="/login"
+                className="hover:text-gray-300 transition-colors duration-200"
+              >
                 Login
               </Link>
-              <Link to="/register" className="hover:text-gray-300">
+              <Link
+                to="/register"
+                className="hover:text-gray-300 transition-colors duration-200"
+              >
                 Register
               </Link>
             </>
