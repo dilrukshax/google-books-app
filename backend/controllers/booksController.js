@@ -32,7 +32,10 @@ const getBooksByCategory = async (req, res) => {
         res.json({ books });
     } catch (error) {
         // Instead of throwing an error, return an empty array
-        res.json({ books: [] });
+        if (error.message.includes('Invalid category')) {
+            return res.status(400).json({ error: 'Invalid category provided.' });
+        }
+        handleError(res, error);
     }
 };
 

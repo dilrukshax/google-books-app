@@ -7,12 +7,14 @@ const mongoose = require('./db/database'); // MongoDB connection
 const booksRouter = require('./routes/books');
 const authRouter = require('./routes/auth');
 const favoritesRoutes = require('./routes/favorites');
+const rateLimiter = require('./middleware/rateLimiter');
 
 const app = express();
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(rateLimiter);
 
 // Routes
 app.use('/api/books', booksRouter);

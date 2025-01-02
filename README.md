@@ -1,70 +1,185 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#  Google Books Platform
 
-## Available Scripts
+<!-- Centered Core Technologies Badges -->
 
-In the project directory, you can run:
 
-### `npm start`
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=json-web-tokens&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+</div>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## 🌟 Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **User Authentication**: Secure registration and login using JWT (JSON Web Token).
+- **Book Categories**: Browse popular books categorized into genres like Fantasy, Sci-Fi, and more.
+- **Search Functionality**: Search for books by title, author, or keyword.
+- **Favorites**: Add and manage your favorite books.
+- **Book Details**: View detailed information about each book including title, author, description, and cover image.
+- **Google Books API Integration**: Fetch book data from Google Books API.
+- **Responsive Design**: Built with Tailwind CSS for a modern and responsive interface.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📈 Architecture
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The Google Books Platform follows a **Client-Server Architecture** with a clear separation between the frontend and backend. Here’s an overview:
 
-### `npm run eject`
+### **Backend (API with Express.js)**
+- **Controllers**: Handle HTTP requests and define API endpoints.
+- **Services**: Contain business logic for fetching books, managing users, etc.
+- **Models**: Define data structures such as `User`, `Book`, and `Favorite`.
+- **Authentication & Authorization**: Secure API access using JWT for token-based authentication.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### **Frontend (React)**
+- **Components**: Reusable UI elements such as BookCard, SearchBar, etc.
+- **Pages**: Represent different views/routes like Home, Book Details, etc.
+- **State Management**: Handle state using React hooks and context for global state.
+- **API Calls**: Fetch data from the backend or directly from the Google Books API.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### **Database**
+- **MongoDB**: Store user data, favorite books, and other information.
+- **JWT**: Securely authenticate and manage user sessions.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🔧 Setup & Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Follow these steps to set up the project locally.
 
-## Learn More
+### **Clone the Repository**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+git clone https://github.com/your-username/google-books-platform.git
+cd google-books-platform
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### **Backend Setup (Express.js)**
 
-### Code Splitting
+1. **Navigate to the Backend Directory**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    ```bash
+    cd backend
+    ```
 
-### Analyzing the Bundle Size
+2. **Install Dependencies**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    ```bash
+    npm install
+    ```
 
-### Making a Progressive Web App
+3. **Configure Environment Variables**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    Create a `.env` file with the following structure:
 
-### Advanced Configuration
+    ```plaintext
+    JWT_SECRET=your-secret-key
+    GOOGLE_API_KEY=your-google-books-api-key
+    MONGODB_URI=your-mongodb-uri
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+4. **Start the Backend Server**
 
-### Deployment
+    ```bash
+    npm run dev
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    The API should now be running at `http://localhost:5000`.
 
-### `npm run build` fails to minify
+### **Frontend Setup**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Navigate to the Frontend Directory**
+
+    ```bash
+    cd frontend
+    ```
+
+2. **Install Dependencies**
+
+    ```bash
+    npm install
+    ```
+
+3. **Start the Frontend Application**
+
+    ```bash
+    npm start
+    ```
+
+    The frontend should now be accessible at `http://localhost:3000`.
+
+## 🧑‍💻 Usage
+
+1. **Register & Login**: 
+    - Register and log in to access features like searching, viewing book details, and managing favorites.
+
+2. **Browse Books**: 
+    - The homepage displays popular books and allows you to filter by category (e.g., Fantasy, Sci-Fi).
+    - Use the search bar to find specific books.
+
+3. **Add to Favorites**: 
+    - Hover over any book card to add it to your favorites.
+    - View your favorite books in your profile.
+
+4. **View Book Details**: 
+    - Click on any book to see detailed information such as description, authors, and cover image.
+
+## 📸 Screenshots
+
+### **Homepage**
+
+![Web capture_2-1-2025_224523_localhost](https://github.com/user-attachments/assets/82fc7b65-e1fc-4541-9c9b-5adc0f002712)
+
+
+### **Book Details Page**
+
+
+![Web capture_2-1-2025_225822_localhost](https://github.com/user-attachments/assets/c4fe22a2-2c92-43f5-9361-6706b3847591)
+
+
+
+### ** Registration Page**
+
+![Web capture_2-1-2025_22450_localhost](https://github.com/user-attachments/assets/e3c4df8b-8e0e-4905-a00e-97ca271e2ca4)
+
+
+### **Login Page**
+
+![Web capture_2-1-2025_224446_localhost](https://github.com/user-attachments/assets/eeb1198d-2035-4233-9469-443e626f2ca9)
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to fork this repository, create a new branch, and submit a pull request.
+
+1. **Fork the Project**
+2. **Create a Feature Branch**
+
+    ```bash
+    git checkout -b feature/AmazingFeature
+    ```
+
+3. **Commit your Changes**
+
+    ```bash
+    git commit -m 'Add some AmazingFeature'
+    ```
+
+4. **Push to the Branch**
+
+    ```bash
+    git push origin feature/AmazingFeature
+    ```
+
+5. **Open a Pull Request**
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## 📫 Contact
+
+- **Email**: [dilandilruksha0@gmail.com](mailto:dilandilruksha0@gmail.com)
