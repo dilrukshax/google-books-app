@@ -1,9 +1,8 @@
+
+# Google API Books Platform
+
+
 <div align="center">
-
-#  Google Books Platform
-
-<!-- Centered Core Technologies Badges -->
-
 
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
@@ -14,172 +13,89 @@
 
 </div>
 
+## Features
 
-## 🌟 Features
-
-- **User Authentication**: Secure registration and login using JWT (JSON Web Token).
-- **Book Categories**: Browse popular books categorized into genres like Fantasy, Sci-Fi, and more.
-- **Search Functionality**: Search for books by title, author, or keyword.
+- **User Authentication**: Secure registration and login using JSON Web Tokens (JWT).
+- **Book Categories**: Explore books across various genres.
+- **Search Functionality**: Find books by title, author, or keyword.
 - **Favorites**: Add and manage your favorite books.
-- **Book Details**: View detailed information about each book including title, author, description, and cover image.
-- **Google Books API Integration**: Fetch book data from Google Books API.
-- **Responsive Design**: Built with Tailwind CSS for a modern and responsive interface.
+- **Book Details**: View comprehensive information about each book, including title, author, description, and cover image.
+- **Responsive Design**: Enjoy a modern interface optimized for all devices.
 
 
+## Getting Started
 
-## 📈 Architecture
+### Prerequisites
 
-The Google Books Platform follows a **Client-Server Architecture** with a clear separation between the frontend and backend. Here’s an overview:
+- Node.js and npm installed
+- MongoDB instance
+- Google Books API Key
 
-### **Backend (API with Express.js)**
-- **Controllers**: Handle HTTP requests and define API endpoints.
-- **Services**: Contain business logic for fetching books, managing users, etc.
-- **Models**: Define data structures such as `User`, `Book`, and `Favorite`.
-- **Authentication & Authorization**: Secure API access using JWT for token-based authentication.
+### Installation
 
-### **Frontend (React)**
-- **Components**: Reusable UI elements such as BookCard, SearchBar, etc.
-- **Pages**: Represent different views/routes like Home, Book Details, etc.
-- **State Management**: Handle state using React hooks and context for global state.
-- **API Calls**: Fetch data from the backend or directly from the Google Books API.
+1. **Clone the Repository**:
 
-### **Database**
-- **MongoDB**: Store user data, favorite books, and other information.
-- **JWT**: Securely authenticate and manage user sessions.
+   ```bash
+   git clone https://github.com/your-username/google-books-platform.git
+   ```
 
-## 🔧 Setup & Installation
+2. **Backend Setup**:
 
-Follow these steps to set up the project locally.
+   - Navigate to the backend directory:
 
-### **Clone the Repository**
+     ```bash
+     cd google-books-platform/backend
+     ```
 
-```bash
-git clone https://github.com/your-username/google-books-platform.git
-cd google-books-platform
-```
+   - Install dependencies:
 
-### **Backend Setup (Express.js)**
+     ```bash
+     npm install
+     ```
 
-1. **Navigate to the Backend Directory**
+   - Create a `.env` file with the following content:
 
-    ```bash
-    cd backend
-    ```
+     ```env
+     JWT_SECRET=your-secret-key
+     GOOGLE_API_KEY=your-google-books-api-key
+     MONGODB_URI=your-mongodb-uri
+     ```
 
-2. **Install Dependencies**
+   - Start the backend server:
 
-    ```bash
-    npm install
-    ```
+     ```bash
+     npm run dev
+     ```
 
-3. **Configure Environment Variables**
+   The backend server will run at `http://localhost:xxxx`.
 
-    Create a `.env` file with the following structure:
+3. **Frontend Setup**:
 
-    ```plaintext
-    JWT_SECRET=your-secret-key
-    GOOGLE_API_KEY=your-google-books-api-key
-    MONGODB_URI=your-mongodb-uri
-    ```
+   - Navigate to the frontend directory:
 
-4. **Start the Backend Server**
+     ```bash
+     cd ../frontend
+     ```
 
-    ```bash
-    npm run dev
-    ```
+   - Install dependencies:
 
-    The API should now be running at `http://localhost:5000`.
+     ```bash
+     npm install
+     ```
 
-### **Frontend Setup**
+   - Start the frontend application:
 
-1. **Navigate to the Frontend Directory**
+     ```bash
+     npm start
+     ```
 
-    ```bash
-    cd frontend
-    ```
+   The frontend will be accessible at `http://localhost:xxxx`.
 
-2. **Install Dependencies**
+## Contributing
 
-    ```bash
-    npm install
-    ```
-
-3. **Start the Frontend Application**
-
-    ```bash
-    npm start
-    ```
-
-    The frontend should now be accessible at `http://localhost:3000`.
-
-## 🧑‍💻 Usage
-
-1. **Register & Login**: 
-    - Register and log in to access features like searching, viewing book details, and managing favorites.
-
-2. **Browse Books**: 
-    - The homepage displays popular books and allows you to filter by category (e.g., Fantasy, Sci-Fi).
-    - Use the search bar to find specific books.
-
-3. **Add to Favorites**: 
-    - Hover over any book card to add it to your favorites.
-    - View your favorite books in your profile.
-
-4. **View Book Details**: 
-    - Click on any book to see detailed information such as description, authors, and cover image.
-
-## 📸 Screenshots
-
-### **Homepage**
-
-![Web capture_2-1-2025_224523_localhost](https://github.com/user-attachments/assets/82fc7b65-e1fc-4541-9c9b-5adc0f002712)
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
 
 
-### **Book Details Page**
-
-
-![Web capture_2-1-2025_225822_localhost](https://github.com/user-attachments/assets/c4fe22a2-2c92-43f5-9361-6706b3847591)
-
-
-
-### ** Registration Page**
-
-![Web capture_2-1-2025_22450_localhost](https://github.com/user-attachments/assets/e3c4df8b-8e0e-4905-a00e-97ca271e2ca4)
-
-
-### **Login Page**
-
-![Web capture_2-1-2025_224446_localhost](https://github.com/user-attachments/assets/eeb1198d-2035-4233-9469-443e626f2ca9)
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to fork this repository, create a new branch, and submit a pull request.
-
-1. **Fork the Project**
-2. **Create a Feature Branch**
-
-    ```bash
-    git checkout -b feature/AmazingFeature
-    ```
-
-3. **Commit your Changes**
-
-    ```bash
-    git commit -m 'Add some AmazingFeature'
-    ```
-
-4. **Push to the Branch**
-
-    ```bash
-    git push origin feature/AmazingFeature
-    ```
-
-5. **Open a Pull Request**
-
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-## 📫 Contact
+## Contact
 
 - **Email**: [dilandilruksha0@gmail.com](mailto:dilandilruksha0@gmail.com)
